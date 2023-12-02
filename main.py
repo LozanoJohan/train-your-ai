@@ -8,7 +8,7 @@ import os
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-client = docker.from_env()
+client = docker.DockerClient(base_url='tcp://10.30.14.252:2375') 
 
 # Configuración CORS para permitir solicitudes desde cualquier dominio
 origins = ["*"]
