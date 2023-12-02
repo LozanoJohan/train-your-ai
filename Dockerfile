@@ -10,7 +10,4 @@ COPY ./ /code/app
 
 WORKDIR /code/app
 
-# Comando para hacer ping a una dirección IP específica
-RUN ping -c 4 10.30.14.252
-
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
