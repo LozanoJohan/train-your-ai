@@ -1,3 +1,4 @@
 fastapi
 docker
 uvicorn[standard]
+streamlit
