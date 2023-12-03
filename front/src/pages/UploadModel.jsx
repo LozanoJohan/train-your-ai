@@ -1,8 +1,8 @@
 import { DropFile } from "../components/dropFile"
 
-export const UploadModel = ({address}) => {
+export const UploadModel = ({address, className}) => {
     return (
-        <div className="flex flex-col w-full items-center">
+        <div className={`${className}`}>
             <h1>Entrena Tu IA</h1>
             <p>{address}</p>
             <DropFile className="my-2">Subir archivo docker</DropFile>

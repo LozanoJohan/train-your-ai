@@ -4,16 +4,16 @@ import { GetStarted } from './pages/GetStarted';
 import { UploadModel } from './pages/UploadModel';
 import { MyModels } from './pages/MyModels';
 import { Sidebar } from './components/Sidebar';
+import { ViewModels } from './pages/ViewModels';
 
 
 export default function App() {
   const [address, setAdress] = useState("");
-
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(0);
 
   if (!address) return (
     <div className='flex flex-row'>
-      <Sidebar setPage={setPage}/>
+      <Sidebar setPage={setPage} address={address}/>
       <GetStarted setAdress={setAdress} />
     </div>
   )
@@ -23,16 +23,24 @@ export default function App() {
       case 0:
         return (
           <div className='flex flex-row'>
-            <Sidebar setPage={setPage}/>
-            <UploadModel address={address} />
+            <Sidebar setPage={setPage} address={address} />
+            <UploadModel address={address} className={"flex flex-col w-full items-center"} />
           </div>
         )
 
       case 1:
         return (
           <div className='flex flex-row'>
-            <Sidebar setPage={setPage}/>
-            <MyModels />
+            <Sidebar setPage={setPage} address={address} />
+            <MyModels className={"flex flex-col w-full items-center"} />
+          </div>
+        )
+
+      case 2:
+        return (
+          <div className='flex flex-row'>
+            <Sidebar setPage={setPage} address={address} />
+            <ViewModels className={"flex flex-col w-full items-center"} />
           </div>
         )
     }

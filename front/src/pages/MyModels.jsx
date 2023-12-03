@@ -1,14 +1,10 @@
-import { DropFile } from "../components/dropFile"
+import { MyModelCard } from "../components/MyModelCard"
 
-export const MyModels = () => {
+export const MyModels = ({className}) => {
     return (
-        <>
+        <div className={`${className}`}>
             <h1>Mis modelos</h1>
-            <DropFile className="my-2">Subir archivo docker</DropFile>
-            <br />
-            <DropFile className="my-2">Subir archivo python</DropFile>
-            <br />
-            <button>Entrenar modelo</button>
-        </>
+            <MyModelCard></MyModelCard>
+        </div>
     )
 }
