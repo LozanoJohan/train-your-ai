@@ -1,4 +1,4 @@
 fastapi
 docker
 uvicorn[standard]
-streamlit
+python-multipart

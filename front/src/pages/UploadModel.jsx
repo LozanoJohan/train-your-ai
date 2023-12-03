@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { DropFile } from "../components/dropFile"
+import Web3 from 'web3';
+const web3 = new Web3();
 
 
 export const UploadModel = ({ address, className, contract }) => {
+    const [price, setPrice] = useState();
     const [inputText, setInputText] = useState('');
     const [fileURL1, setFileURL1] = useState();
     const [fileURL2, setFileURL2] = useState();
@@ -12,7 +15,21 @@ export const UploadModel = ({ address, className, contract }) => {
     };
 
     const handleUpload = () => {
-        console.log(fileURL2);
+        contract.methods.deposit(price).send({
+            from: address,
+            value: web3.utils.toWei(price, 'ether')
+
+        })
+            .on('transactionHash', (hash) => {
+                console.log('Hash de transacción:', hash);
+            })
+            .on('receipt', (receipt) => {
+                console.log('Recibo de transacción:', receipt);
+            })
+            .on('error', (error) => {
+                console.error('Error:', error);
+            });
+
         contract.methods.cargar(inputText, fileURL1, fileURL2).send({
             from: address,
         })
@@ -26,6 +43,11 @@ export const UploadModel = ({ address, className, contract }) => {
                 console.error('Error:', error);
             });
     }
+
+    const getPrice = () => {
+        setPrice(Math.random() * 40);
+    }
+
     return (
         <div className={`${className}`}>
             <h1>Entrena Tu IA</h1>
@@ -46,7 +68,10 @@ export const UploadModel = ({ address, className, contract }) => {
                     onChange={handleChange}
                 />
             </div>
-            <button onClick={handleUpload}>Entrenar modelo</button>
+            <button onClick={getPrice}>Entrenar modelo</button>
+            {price && <> <p>Precio a pagar: <span className="text-green-600">{price}</span></p>
+                <button onClick={handleUpload}>Pagar</button>
+            </>}
         </div>
     )
 }
