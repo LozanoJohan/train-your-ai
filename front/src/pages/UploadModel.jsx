@@ -49,8 +49,8 @@ export const UploadModel = ({ address, className, contract }) => {
     }
 
     return (
-        <div className={`${className}`}>
-            <h1>Entrena Tu IA</h1>
+        <div className={`${className} p-10`}>
+            <h1 className="p-5">Entrena Tu IA</h1>
             <DropFile className="my-2" setFileURL={setFileURL1} id="1">Subir archivo docker</DropFile>
             <br />
             <DropFile className="my-2" setFileURL={setFileURL2} id="2">Subir archivo python</DropFile>
@@ -68,9 +68,9 @@ export const UploadModel = ({ address, className, contract }) => {
                     onChange={handleChange}
                 />
             </div>
-            <button onClick={getPrice}>Entrenar modelo</button>
+            <button className="mt-4" onClick={getPrice}>Entrenar modelo</button>
             {price && <> <p>Precio a pagar: <span className="text-green-600">{price}</span></p>
-                <button onClick={handleUpload}>Pagar</button>
+                <button  onClick={handleUpload}>Pagar</button>
             </>}
         </div>
     )

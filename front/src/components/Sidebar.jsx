@@ -12,11 +12,13 @@ export const Sidebar = ({ setPage, address }) => {
                 <button className='my-1' onClick={() => setPage(0)}>Subir Modelo</button>
                 <button className='my-1' onClick={() => setPage(1)}>Mis Modelos</button>
             </div>
+            <img src="https://giveth.mypinata.cloud/ipfs/QmWMe1pi8nuFkbXSw2FMRVXHxZizqEqKj7vsUguuTDm4SG" alt="refi medellin" srcset="" />
             <div className='flex flex-col '>
                 <p>Para quienes quieran entrenar</p>
                 <button className='my-1' onClick={() => setPage(2)}>Ver modelos disponibles</button>
                 {/* <button className='my-1' onClick={() => setPage(1)}>Mis Modelos</button> */}
             </div>
+            <img src="/celoBlanco.png" alt="celo" srcset="" />
             <div className='flex flex-col '>
                 <button className='my-1 flex flex-row items-center justify-around' onClick={() => setPage(3)}>
                     <p>Chat     powered by</p>
