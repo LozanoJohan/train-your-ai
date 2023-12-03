@@ -126,3 +126,36 @@ async def stream_logs_websocket(websocket: WebSocket, container_id: str):
         print(f"Error al transmitir logs: {e}")
     finally:
         connections.remove(websocket)
+
+# @app.post("upload_to_ipfs")
+# async def upload_to_ipfs():
+
+#     import requests
+#     api_key = "0b5ada369072da9f0e61"
+#     api_secret = "054fbe20a34b477359a4cb6f0eb316e65d9143933b08ff895ff7041de2400758"
+#     JWT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI1YTY5YmQ5Yi0yMzg4LTRiYmYtOTI2MS1kNDFlNTUyOWMzZmYiLCJlbWFpbCI6Impsb3phbm9sQHVuYWwuZWR1LmNvIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9LHsiaWQiOiJOWUMxIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjBiNWFkYTM2OTA3MmRhOWYwZTYxIiwic2NvcGVkS2V5U2VjcmV0IjoiMDU0ZmJlMjBhMzRiNDc3MzU5YTRjYjZmMGViMzE2ZTY1ZDkxNDM5MzNiMDhmZjg5NWZmNzA0MWRlMjQwMDc1OCIsImlhdCI6MTcwMTU5NjAxOH0.dcu656I9ZYgzESO5rXTjFctJARpAJIuNb2www-fs7UU"
+
+#     # Ruta al archivo que deseas subir
+#     file_path = 'ruta/al/archivo/a/subir.txt'
+
+#     # URL de la API de Pinata para subir archivos
+#     pinata_url = 'https://api.pinata.cloud/pinning/pinFileToIPFS'
+
+#     # Configura los datos del archivo a cargar
+#     files = {'file': open(file_path, 'rb')}
+
+#     # Configura las cabeceras con las credenciales de Pinata
+#     headers = {
+#         'pinata_api_key': api_key,
+#         'pinata_secret_api_key': api_secret,
+#     }
+
+#     # Realiza la solicitud POST para cargar el archivo
+#     response = requests.post(pinata_url, files=files, headers=headers)
+
+#     # Verifica la respuesta de Pinata
+#     if response.status_code == 200:
+#         print('Archivo subido a Pinata con éxito.')
+#         print('Hash IPFS:', response.json()['IpfsHash'])
+#     else:
+#         print('Error al subir el archivo a Pinata:', response.text)
