@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
-export function DropFile({ childer, className, setFileURL }) {
+export function DropFile({ childer, className, setFileURL, text }) {
     const [message, setMessage] = useState('');
 
     const JWT = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI1YTY5YmQ5Yi0yMzg4LTRiYmYtOTI2MS1kNDFlNTUyOWMzZmYiLCJlbWFpbCI6Impsb3phbm9sQHVuYWwuZWR1LmNvIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9LHsiaWQiOiJOWUMxIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjBiNWFkYTM2OTA3MmRhOWYwZTYxIiwic2NvcGVkS2V5U2VjcmV0IjoiMDU0ZmJlMjBhMzRiNDc3MzU5YTRjYjZmMGViMzE2ZTY1ZDkxNDM5MzNiMDhmZjg5NWZmNzA0MWRlMjQwMDc1OCIsImlhdCI6MTcwMTU5NjAxOH0.dcu656I9ZYgzESO5rXTjFctJARpAJIuNb2www-fs7UU"

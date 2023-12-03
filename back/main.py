@@ -21,7 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-api_url = "http://127.0.0.1:8000"
+api_url = " https://78d0-190-60-231-2.ngrok-free.app"
 
 @app.post("/build-and-run")
 async def build_and_run_image(

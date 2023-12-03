@@ -13,7 +13,11 @@ export const Sidebar = ({ setPage, address }) => {
                 <button className='my-1' onClick={() => setPage(2)}>Ver modelos disponibles</button>
                 {/* <button className='my-1' onClick={() => setPage(1)}>Mis Modelos</button> */}
             </div>
-            <p className='truncate'>{address ? address : "Wallet no conectada"}</p>
+            <div className='flex flex-col '>
+                <button className='my-1' onClick={() => setPage(3)}>Chat</button>
+                {/* <button className='my-1' onClick={() => setPage(1)}>Mis Modelos</button> */}
+                <p className='truncate'>{address ? address : "Wallet no conectada"}</p>
+            </div>
         </aside>
     )
 }

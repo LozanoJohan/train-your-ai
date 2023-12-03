@@ -1,5 +1,4 @@
 import { useState, createContext, useContext } from 'react';
-import { ethers } from 'ethers';
 import { GetStarted } from './pages/GetStarted';
 import { UploadModel } from './pages/UploadModel';
 import { MyModels } from './pages/MyModels';
@@ -25,7 +24,6 @@ export default function App() {
     <div className='flex flex-row'>
       <Sidebar setPage={setPage} address={address} />
       <GetStarted setAdress={setAdress} />
-      {/* <Chat></Chat> */}
     </div>
   )
 
@@ -54,6 +52,13 @@ export default function App() {
             <ViewModels className={"flex flex-col w-full items-center"} contract={celoContract} address={address}/>
           </div>
         )
+        case 3:
+          return (
+            <div className='flex flex-row'>
+              <Sidebar setPage={setPage} address={address} />
+              {/* <Chat className={"flex flex-col w-full items-center"} contract={celoContract} address={address}/> */}
+            </div>
+          )
     }
 }
 

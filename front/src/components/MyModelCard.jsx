@@ -37,7 +37,7 @@ export const MyModelCard = ({ address, contract }) => {
                     <button onClick={() => handleLike(0)}>¡No me gustó! 😡 | Recivir devolución</button>
                 </div>
             </> : <button onClick={viewDemostration}>Ver demostracion</button>}
-            {modelLink && <a href="modelLink">Descargar modelo entrenado</a>}
+            {modelLink && <a href={modelLink}>Descargar modelo entrenado</a>}
         </>
     )
 }

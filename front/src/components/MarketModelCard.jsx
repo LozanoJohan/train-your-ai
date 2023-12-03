@@ -3,7 +3,6 @@ import { DropFile } from "./dropFile"
 
 export const MarketModelCard = ({ className, contract, address }) => {
     const [isTraining, setIsTraining] = useState(false)
-    const [showInfo, setShowInfo] = useState(false)
     const [info, setInfo] = useState()
     const [fileURL1, setFileURL1] = useState();
     const [fileURL2, setFileURL2] = useState();
@@ -35,7 +34,7 @@ export const MarketModelCard = ({ className, contract, address }) => {
             formData.append('dockerfile', dockerfile);
             formData.append('code', code);
 
-            const response = await fetch('http://127.0.0.1:8000/build-and-run', {
+            const response = await fetch(' https://78d0-190-60-231-2.ngrok-free.app/build-and-run', {
                 method: 'POST',
                 body: formData,
             });
