@@ -31,7 +31,8 @@ export function GetStarted({setAdress}) {
   
     return (
       <div className='flex flex-col items-center justify-center h-screen w-screen'>
-        <h1>Entrena tu IA!</h1>
+        <img className="w-10" src="/flower.png" alt="flor" />
+        <h1 className="mb-5">Entrena tu IA!</h1>
         <button onClick={connectMetamask}>Comenzar</button>
       </div>
     )
