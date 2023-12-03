@@ -8,7 +8,7 @@ Breve descripción del proyecto y su propósito. Explique qué hace la aplicaci�
 - Puede incluir aspectos técnicos o funciones específicas de React.
 
 ## Capturas de Pantalla
-![Cap1]()
+![Cap1](https://github.com/LozanoJohan/train-your-ai-hackaton/blob/main/CAPTURE.png?raw=true)
 
 ## Instalación
 1. Clona este repositorio.
