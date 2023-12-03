@@ -45,7 +45,7 @@ export const UploadModel = ({ address, className, contract }) => {
     }
 
     const getPrice = () => {
-        setPrice(Math.random() * 40);
+        setPrice(Math.random() * 4);
     }
 
     return (

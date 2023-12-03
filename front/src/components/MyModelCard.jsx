@@ -8,8 +8,12 @@ export const MyModelCard = ({ address, contract }) => {
 
     const handleLike = async (num) => {
         // setIsTraining(false)
-
-        const result = await contract.methods.RecibirGusta(num).call()
+        const result2 = await contract.methods.RecibirGusta(num).send({
+            from: address,
+        });
+        const result = await contract.methods.RecibirGusta(num).call({
+            from: address,
+        })
         setModelLink(result)
     }
 
@@ -33,7 +37,7 @@ export const MyModelCard = ({ address, contract }) => {
                     <button onClick={() => handleLike(0)}>¡No me gustó! 😡 | Recivir devolución</button>
                 </div>
             </> : <button onClick={viewDemostration}>Ver demostracion</button>}
-            {modelLink && <p>{modelLink}</p>}
+            {modelLink && <a href="modelLink">Descargar modelo entrenado</a>}
         </>
     )
 }
